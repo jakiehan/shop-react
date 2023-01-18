@@ -1,0 +1,47 @@
+@use '../../sass/abstracts/index' as *;
+
+.form {
+  position: relative;
+  height: 40px;
+}
+
+.input {
+  border: none;
+  outline: none;
+  padding: 12px 0 12px 32px;
+  font-weight: $f-weight-sm;
+  font-size: 14px;
+  line-height: 16px;
+  color: $c-dark-grey;
+  width: 170px;
+
+  &:focus {
+    border-bottom: 2px solid $c-orange;
+
+    + .searchIcon {
+      fill: $c-orange;
+    }
+  }
+
+  &::placeholder {
+    color: #323232;
+  }
+
+  &:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0 50px #fff;
+    -webkit-text-fill-color: $c-dark-grey;
+  }
+
+  @include desktop {
+    width: 200px;
+  }
+}
+
+.searchIcon {
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  position: absolute;
+  top: 6px;
+  left: 0;
+}

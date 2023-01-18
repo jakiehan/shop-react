@@ -1,0 +1,8 @@
+@use '../../sass/abstracts' as *;
+
+.app {
+  font-family: 'Roboto', 'Arial', 'sans-serif';
+  font-weight: $f-weight-sm;
+  line-height: 0;
+  margin: 0 auto;
+}

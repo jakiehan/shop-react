@@ -1,0 +1,31 @@
+@use '../../sass/abstracts' as *;
+
+.btn {
+  width: 24px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+  background-position: 50%;
+  font-weight: $f-weight-sm;
+  font-size: 24px;
+
+  &:hover {
+    @include transparency;
+  }
+}
+
+.btnCounter {
+  color: $c-orange;
+  margin: 0 8px;
+  line-height: 24px;
+}
+
+.btnAdd {
+  width: 160px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: $c-orange;
+  line-height: 28px;
+  color: $c-white;
+}

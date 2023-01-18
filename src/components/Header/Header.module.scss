@@ -1,0 +1,32 @@
+@use '../../sass/abstracts' as *;
+
+.header {
+  width: 100%;
+  min-height: 56px;
+}
+
+.container {
+  @include container-position(16px, 24px, 0, 24px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.backBtn {
+  width: 80px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid $c-dark-grey;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: transparent;
+
+  &:hover {
+    @include transparency;
+  }
+
+  @include laptop {
+    width: 120px;
+    height: 40px;
+  }
+}
