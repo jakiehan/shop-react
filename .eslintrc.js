@@ -11,20 +11,25 @@ module.exports = {
         "plugin:import/recommended",
         "plugin:react/jsx-runtime",
         "airbnb",
-        "prettier"
+        "airbnb-typescript",
+        "plugin:@typescript-eslint/recommended",
+        "prettier",
     ],
+    parser: "@typescript-eslint/parser",
     "parserOptions": {
+        project: "./tsconfig.eslint.json",
         "ecmaFeatures": {
             "jsx": true
         },
         "ecmaVersion": "latest",
-        "sourceType": "module"
+        "sourceType": "module",
     },
     "plugins": [
-        "react"
+        "react",
+        "@typescript-eslint",
     ],
     "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
         "react/react-in-jsx-scope": "off",
         "react/prop-types": 0,
         "react/function-component-definition": [
@@ -39,6 +44,7 @@ module.exports = {
         "jsx-a11y/no-noninteractive-element-interactions": ["off"],
         "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
         "no-console": "off",
-        "no-param-reassign": ["error", { "props": false }]
+        "no-param-reassign": ["error", { "props": false }],
+        "react/require-default-props": "off"
     }
 }
