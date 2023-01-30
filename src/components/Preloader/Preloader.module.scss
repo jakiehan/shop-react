@@ -1,29 +1,29 @@
 @use '../../sass/abstracts' as *;
 
 .wrapper {
-  width: 150px;
-  height: 150px;
   position: relative;
-  margin: 150px auto 0;
+  width: 15rem;
+  height: 15rem;
+  margin: 15rem auto 0;
 }
 
 .loader {
+  width: 14rem;
+  height: 14rem;
   transform: rotateZ(45deg);
   perspective: 1000px;
   border-radius: 50%;
-  width: 140px;
-  height: 140px;
   color: $c-dark-grey;
 }
 .loader:before,
 .loader:after {
   content: '';
-  display: block;
   position: absolute;
   top: 0;
   left: 0;
   width: inherit;
   height: inherit;
+  display: block;
   border-radius: 50%;
   transform: rotateX(70deg);
   animation: 1s spin linear infinite;

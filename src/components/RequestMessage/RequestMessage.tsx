@@ -7,9 +7,7 @@ interface RequestMessageProps {
 
 export const RequestMessage = ({ msg }: RequestMessageProps) => (
   <div className={styles.container}>
-    <p className={styles.msg}>
-      {msg}
-    </p>
+    {msg}
   </div>
 );
 

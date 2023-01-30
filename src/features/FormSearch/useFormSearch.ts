@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
-import { debounce } from 'lodash';
 import { useAppDispatch } from 'store';
+import { debounce } from 'utils/debounce';
 import { setSearch } from './formSearchSlice';
 
 type HandleSubmit = React.FormEventHandler<HTMLFormElement>;

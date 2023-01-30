@@ -45,6 +45,6 @@ module.exports = {
         "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
         "no-console": "off",
         "no-param-reassign": ["error", { "props": false }],
-        "react/require-default-props": "off"
+        "react/require-default-props": "off",
     }
 }

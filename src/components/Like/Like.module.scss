@@ -1,9 +1,9 @@
 @use '../../sass/abstracts' as *;
 
 .like {
-  width: 24px;
-  height: 24px;
   align-self: end;
+  width: 2.4rem;
+  height: 2.4rem;
   cursor: pointer;
   filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.25));
 
@@ -13,8 +13,8 @@
 }
 
 .likePosition {
-  margin-top: 6px;
   align-self: center;
+  margin-top: 0.6rem;
 
   @include desktop {
     margin: 0;

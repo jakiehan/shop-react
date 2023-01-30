@@ -1,6 +1,6 @@
 import React from 'react';
 import { Like } from 'components/Like';
-import { CounterBtn } from 'components/CounterBtn';
+import { CounterBtn } from 'components/Button/CounterBtn';
 import { Description } from 'components/Description';
 import { RequestMessage } from 'components/RequestMessage';
 import { Preloader } from 'components/Preloader';
@@ -15,12 +15,12 @@ interface ProductDetailsProps {
 
 export const ProductDetails = ({ id }: ProductDetailsProps) => {
 
-  const { currentProduct, status, error } = useProductDetails(id);
+  const { currentProduct, loading, error } = useProductDetails(id);
 
   return (
     <>
-      {status === 'rejected' && <RequestMessage msg={error} />}
-      {status === 'loading' && <Preloader />}
+      {error && <RequestMessage msg={error} />}
+      {loading && <Preloader />}
       {currentProduct && (
         <section className={styles.detailed}>
           <img
@@ -37,7 +37,7 @@ export const ProductDetails = ({ id }: ProductDetailsProps) => {
               <Description
                 textTitle={currentProduct.description}
                 textDescription={currentProduct.details}
-                type="subtitle"
+                type="h3"
               />
             </div>
             <div className={styles.actionsWrapper}>

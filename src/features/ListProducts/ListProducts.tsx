@@ -7,16 +7,17 @@ import styled from './ListProducts.module.scss';
 
 export const ListProducts = () => {
 
-  const [products, { status, error }] = useListProducts();
+  const [products, { loading, loaded, error }] = useListProducts();
+  const hasProducts = products.length !== 0;
 
   return (
     <>
-      {status === 'rejected' && <RequestMessage msg={error} />}
-      {status === 'loading' && <Preloader />}
-      {status === 'received' &&
-        (products.length !== 0 ? (
+      {error && <RequestMessage msg={error} />}
+      {loading && <Preloader />}
+      {loaded && !error &&
+        (hasProducts ? (
           <ul className={styled.list}>
-            {products.length !== 0 &&
+            {hasProducts &&
               products.map(product => (
                 <li key={product.id}>
                   <Card cardInfo={product} />

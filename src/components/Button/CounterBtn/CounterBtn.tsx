@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import styles from './CounterBtn.module.scss';
 
 interface CounterBtnProps {
@@ -14,7 +15,11 @@ export const CounterBtn = ({
   onClick,
   isDisabled,
 }: CounterBtnProps) => (
-  <button className={type === 'add' ? `${styles.btn} ${styles.btnAdd}` : `${styles.btn} ${styles.btnCounter}`}
+  <button
+    className={classNames(styles.btn, {
+      [styles.btnAdd]: type === 'add',
+      [styles.btnCounter]: type !== 'add'
+    })}
     aria-label={`button ${value}`}
     type="button"
     onClick={onClick}

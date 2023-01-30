@@ -1,6 +1,7 @@
 import React from 'react';
 import iconLike from 'assets/images/like-card.svg';
 import iconLikeActive from 'assets/images/like-card-active.svg';
+import classNames from 'classnames';
 import styles from './Like.module.scss';
 
 interface LikeProps {
@@ -16,7 +17,9 @@ export const Like = ({ isActive, position = '' }: LikeProps) => {
 
   return (
     <img
-      className={position === 'center' ? `${styles.like} ${styles.likePosition}` : styles.like}
+      className={classNames(styles.like, {
+        [styles.likePosition]: position === 'center',
+      })}
       src={!isActive ? iconLike : iconLikeActive}
       alt="like"
       onClick={handleClick}

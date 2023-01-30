@@ -5,20 +5,28 @@ import type { DetailsProduct, Status } from 'types';
 export const loadDetailsInfo = createAsyncThunk<
   { data: { content: DetailsProduct } },
   string,
-  { extra: { client: Axios } }
+  { extra: { client: Axios }, rejectValue: string }
 >('@@details/load-info',
-  (id, { extra: { client } }) =>
-  client.get(`/item/${id}`)
+  async(id, { extra: { client }, rejectWithValue }) => {
+    try {
+      return await client.get(`/item/${id}`);
+    } catch (err) {
+      if (err instanceof Error) {
+        return rejectWithValue(err.message);
+      }
+      return rejectWithValue('Unknown error');
+    }
+  }
 );
 
 type ProductDetails = {
-  status: Status;
+  loading: Status;
   error: string | null;
   currentProduct: DetailsProduct | null;
 };
 
 const initialState: ProductDetails = {
-  status: 'idle',
+  loading: false,
   error: null,
   currentProduct: null,
 };
@@ -32,15 +40,15 @@ const productDetailsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(loadDetailsInfo.pending, (state) => {
-        state.status = 'loading';
+        state.loading = true;
         state.error = null;
       })
       .addCase(loadDetailsInfo.rejected, (state, action) => {
-        state.status = 'rejected';
-        state.error = action.error.message || 'Data acquisition error';
+        state.loading = false;
+        state.error = action.payload || 'Data acquisition error';
       })
       .addCase(loadDetailsInfo.fulfilled, (state, action) => {
-        state.status = 'received';
+        state.loading = false;
         state.currentProduct = action.payload.data.content;
       });
   },

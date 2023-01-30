@@ -2,18 +2,17 @@
 
 .form {
   position: relative;
-  height: 40px;
+  height: 4rem;
 }
 
 .input {
+  width: 17rem;
+  padding: 1.2rem 0 1.2rem 3.2rem;
   border: none;
+  font-size: 1.4rem;
+  line-height: 1.143em;
   outline: none;
-  padding: 12px 0 12px 32px;
-  font-weight: $f-weight-sm;
-  font-size: 14px;
-  line-height: 16px;
   color: $c-dark-grey;
-  width: 170px;
 
   &:focus {
     border-bottom: 2px solid $c-orange;
@@ -33,15 +32,15 @@
   }
 
   @include desktop {
-    width: 200px;
+    width: 20rem;
   }
 }
 
 .searchIcon {
-  width: 24px;
-  height: 24px;
-  padding: 2px;
   position: absolute;
-  top: 6px;
+  top: 0.6rem;
   left: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0.2rem;
 }

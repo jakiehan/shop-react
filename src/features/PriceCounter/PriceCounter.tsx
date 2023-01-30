@@ -1,5 +1,5 @@
 import React from 'react';
-import { CounterBtn } from 'components/CounterBtn';
+import { CounterBtn } from 'components/Button/CounterBtn';
 import type { Price } from 'types';
 import { usePriceCounter } from './usePriceCounter';
 import styles from './PriceCounter.module.scss';
