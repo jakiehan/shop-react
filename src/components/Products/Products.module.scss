@@ -1,0 +1,5 @@
+@use '../../sass/abstracts' as *;
+
+.products {
+  @include container-position(16px, 24px)
+}

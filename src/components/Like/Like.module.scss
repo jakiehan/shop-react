@@ -1,0 +1,22 @@
+@use '../../sass/abstracts' as *;
+
+.like {
+  align-self: end;
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+  filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.25));
+
+  &:hover {
+    @include transparency;
+  }
+}
+
+.likePosition {
+  align-self: center;
+  margin-top: 0.6rem;
+
+  @include desktop {
+    margin: 0;
+  }
+}

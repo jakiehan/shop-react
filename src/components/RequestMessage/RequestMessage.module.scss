@@ -1,0 +1,14 @@
+@use '../../sass/abstracts' as *;
+
+.container {
+  margin: 5rem auto 0;
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 1.143em;
+  color: #B22222;
+
+  @include desktop {
+    font-size: 1.9rem;
+    line-height: 1.106em;
+  }
+}

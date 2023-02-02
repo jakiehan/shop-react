@@ -1,0 +1,19 @@
+@use '../../sass/abstracts'  as *;
+
+.links {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.link {
+  text-decoration: none;
+
+  &:hover {
+   @include transparency;
+  }
+}
+
+.img {
+  width: 2.4rem;
+  height: 2.4rem;
+}

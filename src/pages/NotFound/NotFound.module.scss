@@ -1,0 +1,26 @@
+@use '../../sass/abstracts' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.text {
+  margin: 25rem 0 0;
+  font-size: 3rem;
+  line-height: 1.07em;
+}
+
+.link {
+  font-size: 1.8rem;
+  line-height: 1.17em;
+  text-decoration: none;
+  color: #245bd7;
+
+  &:hover {
+    @include transparency;
+  }
+}

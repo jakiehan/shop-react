@@ -1,0 +1,13 @@
+@use '../../sass/abstracts' as *;
+
+.header {
+  width: 100%;
+  min-height: 5.6rem;
+}
+
+.container {
+  @include container-position(16px, 24px, 0, 24px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
